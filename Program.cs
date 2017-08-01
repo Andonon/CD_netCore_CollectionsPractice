@@ -70,29 +70,74 @@ namespace collectionspractice
 
                 // Console.WriteLine("We currently know of {0} favors.", flavors.Count);
 
+//          User Info Dictionary
+
+            //array of names you made previously
+            string[] nameArray1 = new string[4] { "Tim", "Martin", "Nikki", "Sara"};
 
 
+            List<string> flavors = new List<string>();
+                flavors.Add("Ninjas N' Cream");
+                flavors.Add("Dojo");
+                flavors.Add("Mint Dojo Chip");
+                flavors.Add("Vanilla");
+                flavors.Add("Cookie Doujo");
+                flavors.Add("Rocky Cobblestone Path");
 
-//                   User Info Dictionary
-
-
-            // Create a Dictionary that will store both string keys as well as string values
-
-
+            // Create a Dictionary that will store  string values
+            Dictionary<string,string> userflavors = new Dictionary<string,string>();
 
             // For each name in the array of names you made previously, add it as a new key in this dictionary with value null
-
-
-
-
-
+            foreach(string name in nameArray1){
+                userflavors.Add(name, null);
+                Console.WriteLine("Writing names: " + name);
+            };
 
             // For each name key, select a random flavor from the flavor list above and store it as the value
+            // select random number... equal to array length. 
+
+
+            List<string> randflavors = new List<string>();
+            Random rand = new Random();
+                for(int val = 0; val < 6; val++)
+                {
+                    randflavors.Add(flavors[rand.Next(0,5)]);
+                }                      
+            
+            // check randFlavors
+            foreach(string flavor in randflavors){
+                Console.WriteLine(flavor);
+            }
+
+            foreach (KeyValuePair<string,string> entry in userflavors){             
+                Console.WriteLine(entry.Key + " - " + entry.Value);
+            }
+
+
+                // array length is 4/ each person will be null. 
+
+                //nameArray1 above... 
+                //flavors above. 
+
+            //     foreach (KeyValuePair<string,string> entry in userflavors)
+            //         {
+            //         Console.WriteLine(entry.Key + " - " + entry.Value);
+            //         }
+
+            //     profile.Add("Name", "Speros");
+            //     profile.Add("Language", "PHP");
+            //     profile.Add("Location", "Greece");
 
 
 
-            // Loop through the Dictionary and print out each user's name and their associated ice cream flavor.
 
+
+            // // Loop through the Dictionary and print out each user's name and their associated ice cream flavor.
+
+            //     Console.WriteLine("Name - " + profile["Name"]);
+            //     Console.WriteLine("Instructor Profile");
+            //     Console.WriteLine("From - " + profile["Location"]);
+            //     Console.WriteLine("Favorite Language - " + profile["Language"]);
 
 
 
